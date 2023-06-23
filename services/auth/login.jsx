@@ -5,14 +5,9 @@ const api = axios.create({
     baseURL: BASE_URL,
 });
 
-const login = async (FormData) => {
-    console.log(FormData);
+const login = (FormData) => {
     try {
-        if (FormData.login === "Ana" && FormData.senha === "senha") {
-            return true;
-        } else {
-            return false;
-        }
+        return FormData.login === "Ana" && FormData.senha === "senha";
     } catch (e) {
         return false;
     }
