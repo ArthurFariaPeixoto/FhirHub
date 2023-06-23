@@ -9,11 +9,7 @@ const Layout = ({ children }) => {
     const router = useRouter();
     const matches = useMediaQuery("(min-width:600px)");
 
-    // React.useEffect(() => {
-    //
-    // }, [matches]);
-
-    if (router.pathname === "/login") {
+    if (router.pathname === "/login" ||router.pathname === "/cadastro") {
         return <>{children}</>;
     } else {
         return (
