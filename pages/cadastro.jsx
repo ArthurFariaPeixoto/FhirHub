@@ -9,6 +9,7 @@ import { useAlertModal } from "../hooks/useSweetAlert";
 import Link from "components/Link";
 // import { Preferences } from "@capacitor/preferences";
 
+
 const Cadastro = () => {
     const router = useRouter();
     const { createModal } = useAlertModal();

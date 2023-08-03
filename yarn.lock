@@ -2866,10 +2866,10 @@ react-dom@latest:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-hook-form-mui@^5.14.0:
-  version "5.16.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form-mui/-/react-hook-form-mui-5.16.0.tgz#10e70187473e4e9b78476eb520208c9414b5fb6b"
-  integrity sha512-0eP7ZAFzYEz3EjydjGz4993OCKAd0rkCSMb3GP38KBPGnmOO5WSV+4qxnZJ42FH2S3XR1ndxZiZh8nydclr3rg==
+react-hook-form-mui@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form-mui/-/react-hook-form-mui-6.4.2.tgz#ce9d366e1f132d80fef758a63c1801d64cde3be1"
+  integrity sha512-Ggi8qojDDCyxzNKf9EIDbTqe3NsYpWr+4O9NBT8JvB9ZHcM+IS3rH7cch2nwL4RY1llPXVYW7i58G9faAzfyng==
 
 react-hook-form@^7.43.1:
   version "7.44.2"

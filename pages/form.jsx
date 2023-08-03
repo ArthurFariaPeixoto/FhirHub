@@ -16,6 +16,8 @@ import Extensão from './extensão';
 import Composição from './composição';
 
 
+
+
 const steps = ['Atributos Básicos', 'Filtros', 'Composição', 'Extensão'];
 
 function getStepContent(step) {
@@ -71,6 +73,7 @@ export default function Checkout() {
             </React.Fragment>
           ) : (
             <React.Fragment>
+              
               {getStepContent(activeStep)}
               <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 {activeStep !== 0 && (

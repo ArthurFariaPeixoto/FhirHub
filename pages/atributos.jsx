@@ -1,13 +1,15 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+
+import { TextField, Checkbox,FormControlLabel,MenuItem, Select, Grid,Typography  } from '@mui/material'
+import { AutocompleteElement, SelectElement, FormContainer } from 'react-hook-form-mui';
+
 
 export default function Atributos() {
+  const opcoes =[{id:1, label:"campo 1"},{id:2, label:"campo 2"},{id:3, label:"campo 3"}]
+
   return (
     <React.Fragment>
+      <FormContainer>
       <Typography variant="h6" gutterBottom>
         Informações Básicas
       </Typography>
@@ -50,8 +52,16 @@ export default function Atributos() {
             fullWidth
             variant="standard"
           />
+          <Grid item md={6} xs={12} sx={{ mt: 3 }}>
+            <Select label="status" size="large">
+            <MenuItem value={1}> ola</MenuItem>
+            </Select>
+            <AutocompleteElement name="teste" options={opcoes} matchId />
+            
+                            </Grid>
         </Grid>
       </Grid>
+      </FormContainer>
     </React.Fragment>
   );
 }
