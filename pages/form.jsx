@@ -10,12 +10,12 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Atributos from './atributos';
-import Filtros from './filtros';
-import Extensão from './extensão';
-import Composição from './composição';
+import Atributos from "../form/atributos";
+import Filtros from '../form/filtros';
+import Extensão from '../form/extensão';
+import Composição from '../form/composição';
 
-
+import { FormContainer } from 'react-hook-form-mui';
 
 
 const steps = ['Atributos Básicos', 'Filtros', 'Composição', 'Extensão'];
@@ -52,6 +52,7 @@ export default function Checkout() {
    
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+          <FormContainer>
           <Typography component="h1" variant="h4" align="center">
             ValueSet
           </Typography>
@@ -92,6 +93,7 @@ export default function Checkout() {
               </Box>
             </React.Fragment>
           )}
+          </FormContainer>
         </Paper>
 
       </Container>
