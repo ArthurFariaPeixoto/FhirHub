@@ -6,10 +6,14 @@ import { AutocompleteElement, DateTimePickerElement, TextFieldElement, TextareaA
 
 export default function Filtros() {
     const opcoesStatus =[
-        {id:1, label:"Draft"},
-        {id:2, label:"Active"},
-        {id:3, label:"Retired"},
-        {id:4, label:"Unknown"}
+        {id:1, label:"Is-a"},
+        {id:2, label:"Descendant-of"},
+        {id:3, label:"is-not-a"},
+        {id:4, label:"regex"},
+        {id:5, label:"in"},
+        {id:6, label:"not-in"},
+        {id:7, label:"generalizes"},
+        {id:4, label:"exists"},
     ]
 
     return (
@@ -18,7 +22,36 @@ export default function Filtros() {
                 Filtros
             </Typography>
             <Grid container spacing={3}>
-
+                <Grid item xs={12}>
+                    <TextFieldElement
+                        required
+                        id="property"
+                        name="property"
+                        label="Property"
+                        fullWidth
+                    />
+                </Grid>
+                <Grid item xs={12}>
+                    <AutocompleteElement name="filter operator" label="Filter Operator" options={opcoesStatus} matchId required />
+                </Grid>
+                <Grid item xs={12}>
+                    <TextFieldElement
+                        required true
+                        id="value"
+                        name="value"
+                        label="Value"
+                        fullWidth
+                    />
+                </Grid>
+                <Grid item xs={12}>
+                    <TextFieldElement
+                        required true
+                        id="exclude"
+                        name="exclue"
+                        label="Exclude"
+                        fullWidth
+                    />
+                </Grid>
             </Grid>
         </React.Fragment>
     );
