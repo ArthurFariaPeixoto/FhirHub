@@ -7,12 +7,6 @@ import { blue } from '@mui/material/colors';
 
 export default function Composição() {
 
-    const opcoesStatus =[
-        {id:1, label:"Draft"},
-        {id:2, label:"Active"},
-        {id:3, label:"Retired"},
-        {id:4, label:"Unknown"}
-    ]
 
     const opcoesInactive =[
         {id:1, label:"True"},
@@ -190,8 +184,9 @@ export default function Composição() {
                 required
               />
             </Grid>
-            /** /Tudo dentro filter */
 
+
+            /** /compose */
             <Grid item md={6} xs={12}>
               <TextFieldElement
                 id="exclude"
@@ -199,46 +194,6 @@ export default function Composição() {
                 label="exclude"
                 fullWidth
               />
-            </Grid>
-
-
-            <Grid item md={6} xs={12}>
-                <AutocompleteElement name="status" label="Status" options={opcoesStatus} matchId required />
-            </Grid>
-            <Grid item md={6} xs={12}>
-                <TextFieldElement
-                    id="publisher"
-                    name="publisher"
-                    label="Publisher"
-                    fullWidth
-                    required/>
-            </Grid>
-            <Grid item md={6} xs={12}>
-                <TextFieldElement
-                    id="purpose"
-                    name="purpose"
-                    label="Purpose"
-                    fullWidth
-                    required/>
-            </Grid>
-            <Grid item md={6} xs={12}>
-                <TextFieldElement
-                    id="copyright"
-                    name="copyright"
-                    label="Copyright"
-                    fullWidth
-                    required/>
-            </Grid>
-            <Grid item md={12} xs={12}>
-                <TextareaAutosizeElement
-                    id="description"
-                    name="description"
-                    label="Description"
-                    fullWidth
-                    required
-                    rows={5}
-                    resizeStyle={"none"}
-                />
             </Grid>
     
           </Grid>
