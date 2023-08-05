@@ -15,7 +15,7 @@ import Filtros from '../form/filtros';
 import Extensão from '../form/extensão';
 import Composição from '../form/composição';
 
-import { FormContainer } from 'react-hook-form-mui';
+import { FormContainer} from 'react-hook-form-mui';
 
 
 const steps = ['Atributos Básicos', 'Filtros', 'Composição', 'Extensão'];
@@ -46,13 +46,14 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
+
   return (
     <React.Fragment>
       <CssBaseline />
    
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-          <FormContainer>
+          <FormContainer defaultValues={{inactive: {id:1, label:"False"}}}>
           <Typography component="h1" variant="h4" align="center">
             ValueSet
           </Typography>
