@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 import { Grid,Typography  } from '@mui/material'
-import { AutocompleteElement, DateTimePickerElement, TextFieldElement, TextareaAutosizeElement } from 'react-hook-form-mui';
+import { AutocompleteElement, TextFieldElement } from 'react-hook-form-mui';
 
 
 export default function Filtros() {
-    const opcoesStatus =[
+    const opcoesFilter =[
         {id:1, label:"Is-a"},
         {id:2, label:"Descendant-of"},
         {id:3, label:"is-not-a"},
@@ -32,11 +32,11 @@ export default function Filtros() {
                     />
                 </Grid>
                 <Grid item xs={12}>
-                    <AutocompleteElement name="filter operator" label="Filter Operator" options={opcoesStatus} matchId required />
+                    <AutocompleteElement name="filterOperator" label="Filter Operator" options={opcoesFilter} matchId />
                 </Grid>
                 <Grid item xs={12}>
                     <TextFieldElement
-                        required true
+                        required
                         id="value"
                         name="value"
                         label="Value"
@@ -45,9 +45,9 @@ export default function Filtros() {
                 </Grid>
                 <Grid item xs={12}>
                     <TextFieldElement
-                        required true
+                        required
                         id="exclude"
-                        name="exclue"
+                        name="exclude"
                         label="Exclude"
                         fullWidth
                     />

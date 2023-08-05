@@ -6,8 +6,6 @@ import { FormContainer, PasswordElement, TextFieldElement, DatePickerElement } f
 import login from "../services/auth/login";
 import { useRouter } from "next/router";
 import { useAlertModal } from "../hooks/useSweetAlert";
-import Link from "components/Link";
-// import { Preferences } from "@capacitor/preferences";
 
 
 const Cadastro = () => {
