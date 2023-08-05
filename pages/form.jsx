@@ -1,21 +1,13 @@
 import * as React from 'react';
+
 import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
-import Paper from '@mui/material/Paper';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import {Box, Container, Paper, Stepper, Step, StepLabel, Button, Typography } from "@mui/material"
+import { FormContainer} from 'react-hook-form-mui';
+
 import Atributos from "../form/atributos";
 import Filtros from '../form/filtros';
-import Extensão from '../form/extensão';
-import Composição from '../form/composição';
-
-import { FormContainer} from 'react-hook-form-mui';
+import Extensao from '../form/extensao';
+import Composicao from '../form/composicao';
 
 
 const steps = ['Atributos Básicos', 'Filtros', 'Composição', 'Extensão'];
@@ -27,9 +19,9 @@ function getStepContent(step) {
     case 1:
       return <Filtros />;
     case 2:
-      return <Composição />;
+      return <Composicao />;
       case 3:
-        return <Extensão />;
+        return <Extensao />;
     default:
       throw new Error('Unknown step');
   }

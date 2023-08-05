@@ -1,63 +1,51 @@
 import * as React from 'react';
 
 import { Grid,Typography  } from '@mui/material'
-import { AutocompleteElement, DateTimePickerElement, TextFieldElement, TextareaAutosizeElement,  useFormContext, useWatch  } from 'react-hook-form-mui';
-import { blue } from '@mui/material/colors';
+import { AutocompleteElement, TextFieldElement,  useFormContext  } from 'react-hook-form-mui';
 
 
-export default function Composição() {
+export default function Composicao() {
   const {reset, watch, resetField} = useFormContext();
 
-    const opcoesInactive =[
-        {id:1, label:"False"},
-        {id:2, label:"True"},
-
-    ]
+    const opcoesInactive =[{id:1, label:"False"}, {id:2, label:"True"}]
 
     const [showIncludes, setShowIncludes] = React.useState(null);
     const [showConcepts, setShowConcepts] = React.useState(null);
     const [showDesignations, setShowDesignations] = React.useState(null);
     const [showFilters, setShowFilters] = React.useState(null);
 
-
-
-
     const includeWatch = watch("includes");
     const conceptWatch = watch("concept");
     const designationWatch = watch("designation");
     const filterWatch = watch("filter");
 
-  React.useEffect(() => {
-      if(includeWatch !== undefined && includeWatch !== ""){
-        setShowIncludes(1);
+    React.useEffect(() => {
+        if(includeWatch !== undefined && includeWatch !== ""){
+          setShowIncludes(1);
+        }else{
+          setShowIncludes(null);
+        }
+
+      if(conceptWatch !== undefined && conceptWatch !== ""){
+        setShowConcepts(1);
       }else{
-        setShowIncludes(null);
+        setShowConcepts(null);
       }
-    }, [includeWatch]);
 
-  React.useEffect(() => {
-    if(conceptWatch !== undefined && conceptWatch !== ""){
-      setShowConcepts(1);
-    }else{
-      setShowConcepts(null);
-    }
-  }, [conceptWatch]);
+      if(designationWatch !== undefined && designationWatch !== ""){
+        setShowDesignations(1);
+      }else{
+        setShowDesignations(null);
+      }
 
-  React.useEffect(() => {
-    if(designationWatch !== undefined && designationWatch !== ""){
-      setShowDesignations(1);
-    }else{
-      setShowDesignations(null);
-    }
-  }, [designationWatch]);
+      if(filterWatch !== undefined && filterWatch !== ""){
+        setShowFilters(1);
+      }else{
+        setShowFilters(null);
+      }
 
-  React.useEffect(() => {
-    if(filterWatch !== undefined && filterWatch !== ""){
-      setShowFilters(1);
-    }else{
-      setShowFilters(null);
-    }
-  }, [filterWatch]);
+
+      }, [includeWatch, conceptWatch, designationWatch, filterWatch]);
 
     return (
         <React.Fragment>

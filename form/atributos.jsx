@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Grid,Typography  } from '@mui/material'
-import { AutocompleteElement, DateTimePickerElement, TextFieldElement, TextareaAutosizeElement } from 'react-hook-form-mui';
+import { AutocompleteElement, TextFieldElement, TextareaAutosizeElement } from 'react-hook-form-mui';
 
 
 export default function Atributos() {
