@@ -1,45 +1,44 @@
 import * as React from 'react';
 
-import { Grid, Typography, DateTimeField, Switch, FormControlLabel, FormGroup, Checkbox, FormHelperText } from '@mui/material'
+import { Grid, Typography, Stack, Box, DateTimeField, Switch, FormControlLabel, FormGroup, Checkbox, FormHelperText } from '@mui/material'
 import { AutocompleteElement, TextFieldElement, TextareaAutosizeElement, useFormContext } from 'react-hook-form-mui';
+
+import Identifier from "../complex-type/indentifier"
+import Contact from "../complex-type/contact"
+import Context from "../complex-type/context"
 
 
 export default function Atributos() {
 
   const opcoesBoolean = [{ id: 1, label: "False" }, { id: 2, label: "True" }]
 
-  const { reset, watch, resetField } = useFormContext();
-
   const [showHelperText, setShowHelperText] = React.useState(false);
-  const [showIdentifier, setshowIdentifier] = React.useState(null);
+  const [showIdentifier, setshowIdentifier] = React.useState(false);
+  const [showContact, setshowContact] = React.useState(false);
+  const [showContext, setshowContext] = React.useState(false);
 
   const handleSwitchChange = () => {
     setShowHelperText(!showHelperText);
   };
 
-  const identifierWatch = watch("identifier");
+  const handleBoxChange = () => {
+    setshowIdentifier(!showIdentifier);
+  };
 
-  React.useEffect(() => {
-    if (identifierWatch !== undefined && identifierWatch !== "") {
-      setshowIdentifier(1);
-    } else {
-      setshowIdentifier(null);
-    }
-  }, [identifierWatch]);
+  const handleBoxChange2 = () => {
+    setshowContact(!showContact);
+  };
+
+  const handleBoxChange3 = () => {
+    setshowContext(!showContext);
+  };
+
 
   const opcoesStatus = [
     { id: 1, label: "Draft" },
     { id: 2, label: "Active" },
     { id: 3, label: "Retired" },
     { id: 4, label: "Unknown" }
-  ]
-
-  const opcoesUse = [
-    { id: 1, label: "Usual" },
-    { id: 2, label: "Official" },
-    { id: 3, label: "Temp" },
-    { id: 4, label: "Secondary" },
-    { id: 5, label: "Old (If known)" }
   ]
 
   return (
@@ -62,44 +61,19 @@ export default function Atributos() {
             onChange={(e) => setName(e.target.value)}
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextFieldElement
-            id="identifier"
-            name="identifier"
-            label="Identifier"
-            placeholder="example-valueset"
-            helperText={showHelperText ? "Identificador adicional para o ValueSet" : null}
-            fullWidth
-          />
+
+        <Grid item md={6} xs={6}>
+          <FormGroup item mt={16} >
+            <FormControlLabel control={<Checkbox onChange={handleBoxChange} />} label="Identifier" />
+            {showHelperText && <FormHelperText>Identificador adicional para o ValueSet</FormHelperText>}
+          </FormGroup>
         </Grid>
-          {showIdentifier && (
-            <>
-              <Grid item md={6} xs={6}>
-                <AutocompleteElement name="use" label="Use" options={opcoesUse} matchId
-                />
-              </Grid>
-              <Grid item md={6} xs={6}>
-                <TextFieldElement
-                  id="value"
-                  name="value"
-                  label="Value"
-                  placeholder="123456"
-                  helperText={showHelperText ? "O valor que é único" : null}
-                  fullWidth
-                />
-              </Grid>
-              <Grid item md={12} xs={12}>
-                <TextFieldElement
-                  id="system"
-                  name="system"
-                  label="System"
-                  placeholder="http://example.com/identifiers/valueset"
-                  helperText={showHelperText ? "O namespace para o valor do identificador" : null}
-                  fullWidth
-                />
-              </Grid>
-            </>
-          )}
+
+        {showIdentifier && (
+          <>
+            <Identifier />
+          </>
+        )}
         <Grid item xs={12}>
           <TextFieldElement
             id="url"
@@ -175,6 +149,41 @@ export default function Atributos() {
             helperText={showHelperText ? "Restrições de uso e/ou publicação" : null}
             fullWidth />
         </Grid>
+
+
+        <Grid item md={6} xs={6}>
+          <FormGroup item mt={16} >
+            <FormControlLabel control={<Checkbox onChange={handleBoxChange2} />} label="Contact" />
+            {showHelperText && <FormHelperText>Dados de contato da editora</FormHelperText>}
+          </FormGroup>
+        </Grid>
+
+
+
+        {showContact && (
+          <>
+            <Contact />
+          </>
+        )}
+
+
+
+        <Grid item md={6} xs={6}>
+          <FormGroup item mt={16} >
+            <FormControlLabel control={<Checkbox onChange={handleBoxChange3} />} label="useContext" />
+            {showHelperText && <FormHelperText>O contexto que o conteúdo pretende apoiar</FormHelperText>}
+          </FormGroup>
+        </Grid>
+
+
+
+        {showContext && (
+          <>
+            <Context />
+          </>
+        )}
+
+
         <Grid item md={12} xs={12}>
           <TextareaAutosizeElement
             id="description"
@@ -195,8 +204,8 @@ export default function Atributos() {
         </Grid>
 
       </Grid>
-      
+
     </React.Fragment>
-  );
+  )
 
 }
