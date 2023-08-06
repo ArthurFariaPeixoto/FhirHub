@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Grid,Typography  } from '@mui/material'
-import { AutocompleteElement, TextFieldElement, TextareaAutosizeElement } from 'react-hook-form-mui';
+import { AutocompleteElement, TextFieldElement, TextareaAutosizeElement, DateTimePickerElement } from 'react-hook-form-mui';
 
 
 export default function Atributos() {
@@ -61,7 +61,8 @@ export default function Atributos() {
               {/*<DateTimePickerElement*/}
               {/*    label="Datetime Picker"*/}
               {/*    name="datetime"*/}
-              {/* renderInput={}/>*/}campo de data ta dando erro mas vai ficar aqui
+              {/*/>*/}
+              campo de data ta dando erro mas vai ficar aqui
           </Grid>
           <Grid item md={6} xs={12}>
               <TextFieldElement
