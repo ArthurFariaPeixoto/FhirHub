@@ -7,7 +7,7 @@ const Logo = () => {
     return (
         <motion.div>
             <a href="/fhirHub/">
-                <motion.img src="/fhir/images/logoFhir.svg" alt="FhirHUB" width={180} />
+                <motion.img src="https://www.hl7.org/fhir/assets/images/fhir-logo-www.png" alt="FhirHUB" width={180} />
                 {/* <LocalFireDepartmentIcon /> */}
             </a>
             

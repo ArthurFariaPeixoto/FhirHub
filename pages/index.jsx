@@ -2,9 +2,10 @@ import React from "react";
 import Link from "components/Link";
 
 import {Button, Typography, Container, Stack, Box } from '@mui/material'
-
+import useThemeStore from "../stores/useThemeStore";
 
 function Copyright() {
+
     return (
         <Typography variant="body2" color="text.secondary" align="center">
             {'Copyright © '}
@@ -15,14 +16,10 @@ function Copyright() {
 }
 
 export default function ValueSet() {
-
-
+    const theme = useThemeStore((state) => state.theme);
+    console.log(theme)
     return (
         <>
-
-
-
-
             <main>
                 <Box
                     sx={{
@@ -52,7 +49,7 @@ export default function ValueSet() {
                             {/* <Button variant="contained" type="button" href="/form">Criar uma instância
                             </Button>
                             <Link variant="contained" href="/form">Criar uma instância</Link> */}
-                            <Button variant="contained" type="button"><Link href="/form">Criar uma instância</Link>
+                            <Button variant="contained" type="button"> {theme === "dark" ? <Link href="/form" sx={{color: "white"}}>Criar uma instância</Link>  : <Link href="/form" sx={{color: "black"}}>Criar uma instância</Link> }
                             </Button>
                             
                             <Button variant="outlined" href="https://www.hl7.org/fhir/r4/valueset.html">Documentação </Button>
