@@ -8,6 +8,8 @@ import Atributos from "../form/atributos";
 import Filtros from '../form/filtros';
 import Extensao from '../form/extensao';
 import Composicao from '../form/composicao';
+import { useAlertModal } from "../hooks/useSweetAlert";
+
 
 
 const steps = ['Atributos Básicos', 'Composição', 'Extensão'];
@@ -28,6 +30,8 @@ function getStepContent(step) {
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const { createModal } = useAlertModal();
+
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -70,9 +74,35 @@ export default function Checkout() {
             </div>
           ) : (
             <React.Fragment>
+
+              
               
               {getStepContent(activeStep)}
+
+              <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+                <Button
+                    variant="contained"
+                    sx={{ mt: 3, ml: 1, backgroundColor: "lightBlue" }}
+                    onClick={() =>{
+                      createModal("confirm_submit", { showConfirmButton: true, html: "<p>Deseja realizar a operação? Todos os dados serão perdidos após confirmar.</p><br /> <p style='font-size:12px'>Note que este botão é apenas um demonstrativo.</p>" });
+                  }}
+                  >
+                    Importar
+                </Button>
+                <Button
+                    variant="contained"
+                    sx={{ mt: 3, ml: 1, backgroundColor: "lightGreen" }}
+                    onClick={() =>{
+                      createModal("confirm_submit", { showConfirmButton: true, html: "<p>Deseja realizar a operação? Todos os dados serão perdidos após confirmar.</p><br /> <p style='font-size:12px'>Note que este botão é apenas um demonstrativo.</p>" });
+                  }}
+                  >
+                    Preencher
+                </Button>
+                
+                
+              </Box>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                
                 {activeStep !== 0 && (
                   <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
                     Back
@@ -86,6 +116,7 @@ export default function Checkout() {
                 >
                   {activeStep === steps.length - 1 ? 'finalizar' : 'Next'}
                 </Button>
+                
               </Box>
             </React.Fragment>
           )}
