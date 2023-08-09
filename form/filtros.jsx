@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Grid,Typography  } from '@mui/material'
+import { Grid,Typography, Box  } from '@mui/material'
 import { AutocompleteElement, TextFieldElement } from 'react-hook-form-mui';
 
 
@@ -18,11 +18,13 @@ export default function Filtros() {
 
     return (
         <React.Fragment>
-            <Typography variant="h6" gutterBottom>
+            <Box sx={{ p: 2, border: "1px dashed grey" }}>
+            <Typography variant="h16" gutterBottom color="primary">
                 Filtros
             </Typography>
+
             <Grid container spacing={3}>
-                <Grid item xs={12}>
+                <Grid item md={12} xs={12}>
                     <TextFieldElement
                         required
                         id="property"
@@ -31,10 +33,10 @@ export default function Filtros() {
                         fullWidth
                     />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item md={6} xs={12}>
                     <AutocompleteElement name="filterOperator" label="Filter Operator" options={opcoesFilter} matchId />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item md={6} xs={12}>
                     <TextFieldElement
                         required
                         id="value"
@@ -43,16 +45,8 @@ export default function Filtros() {
                         fullWidth
                     />
                 </Grid>
-                <Grid item xs={12}>
-                    <TextFieldElement
-                        required
-                        id="exclude"
-                        name="exclude"
-                        label="Exclude"
-                        fullWidth
-                    />
-                </Grid>
             </Grid>
+            </Box>
         </React.Fragment>
     );
 }
