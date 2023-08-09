@@ -5,12 +5,15 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 import { darkTheme, lightTheme } from "../config/theme";
 import createEmotionCache from "../config/createEmotionCache";
-import AdapterDayjs  from "@mui/x-date-pickers";
-import { LocalizationProvider } from "@mui/x-date-pickers";
+import AdapterDayjs from "@mui/x-date-pickers";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Layout from "layout";
 import useThemeStore from "../stores/useThemeStore";
 import authVerify from "../utils/authVerify";
+
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { ptBR } from "date-fns/locale";
 
 const clientSideEmotionCache = createEmotionCache();
 const queryClient = new QueryClient();
@@ -35,7 +38,7 @@ export default function MyApp(props) {
             </Head>
 
             <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <LocalizationProvider adapterLocale={ptBR} dateAdapter={AdapterDateFns}>
                     <QueryClientProvider client={queryClient}>
                         <CssBaseline />
                         <Layout>
