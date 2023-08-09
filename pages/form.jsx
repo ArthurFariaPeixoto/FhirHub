@@ -10,18 +10,17 @@ import Extensao from '../form/extensao';
 import Composicao from '../form/composicao';
 
 
-const steps = ['Atributos Básicos', 'Filtros', 'Composição', 'Extensão'];
+const steps = ['Atributos Básicos', 'Composição', 'Extensão'];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
       return <Atributos />;
     case 1:
-      return <Filtros />;
-    case 2:
       return <Composicao />;
-      case 3:
-        return <Extensao />;
+    case 2:
+      return <Extensao />;
+
     default:
       throw new Error('Unknown step');
   }

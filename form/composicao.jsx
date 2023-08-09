@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-import { Grid,Typography  } from '@mui/material'
+import {Checkbox, FormControlLabel, Grid, Typography} from '@mui/material'
 import { AutocompleteElement, TextFieldElement,  useFormContext  } from 'react-hook-form-mui';
+
+import Filtros from "./filtros";
 
 
 export default function Composicao() {
@@ -46,6 +48,10 @@ export default function Composicao() {
 
 
       }, [includeWatch, conceptWatch, designationWatch, filterWatch]);
+
+  const handleBoxChange = () => {
+    setShowFilters(!showFilters);
+  };
 
     return (
         <React.Fragment>
@@ -172,47 +178,13 @@ export default function Composicao() {
                         )}
 
                         <Grid item md={12} xs={12}>
-                          <TextFieldElement
-                            id="filter"
-                            name="filter"
-                            label="filter"
-                            fullWidth
-                            required
-                          />
+                          <FormControlLabel control={<Checkbox onChange={handleBoxChange} />} label="Filter" />
                         </Grid>
 
                         {showFilters && (
-                            <>
-                                <Grid item md={12} xs={12}>
-                                  <TextFieldElement
-                                    id="property"
-                                    name="property"
-                                    label="property"
-                                    fullWidth
-                                    required
-                                  />
-                                </Grid>
-
-                                <Grid item md={6} xs={12}>
-                                  <TextFieldElement
-                                    id="op"
-                                    name="op"
-                                    label="op"
-                                    fullWidth
-                                    required
-                                  />
-                                </Grid>
-
-                                <Grid item md={6} xs={12}>
-                                  <TextFieldElement
-                                    id="value"
-                                    name="value"
-                                    label="value"
-                                    fullWidth
-                                    required
-                                  />
-                                </Grid>
-                            </>
+                            <Grid item md={12} xs={12}>
+                              <Filtros />
+                            </Grid>
                         )}
                 </>
             )}
