@@ -60,9 +60,9 @@ export default function Atributos() {
                 </Grid>
 
                 {showIdentifier && (
-                    <>
+                    <Grid item xs={12}>
                         <Identifier />
-                    </>
+                    </Grid>
                 )}
                 <Grid item xs={12}>
                     <TextFieldElement id="url" name="url" label="Url" placeholder="http://example.com/fhir/ValueSet/example-valueset" helperText={showHelperText ? "Identificador canônico para este ValueSet, representado como um URI" : null} fullWidth />
@@ -105,12 +105,6 @@ export default function Atributos() {
                     </FormGroup>
                 </Grid>
 
-                {showContact && (
-                    <>
-                        <Contact />
-                    </>
-                )}
-
                 <Grid item md={6} xs={6}>
                     <FormGroup item mt={16}>
                         <FormControlLabel control={<Checkbox onChange={handleBoxChange3} />} label="useContext" />
@@ -118,10 +112,16 @@ export default function Atributos() {
                     </FormGroup>
                 </Grid>
 
+                {showContact && (
+                    <Grid item xs={6}>
+                        <Contact />
+                    </Grid>
+                )}
+
                 {showContext && (
-                    <>
+                    <Grid item xs={6}>
                         <Context />
-                    </>
+                    </Grid>
                 )}
 
                 <Grid item md={12} xs={12}>
