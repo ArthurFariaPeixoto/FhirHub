@@ -23,16 +23,16 @@ const TelecomSection = () => {
   
   return (
 
-          <Box sx={{ p: 2, border: '1px dashed grey', ml: 3 }} mt={5}  >
+          <Box sx={{ p: 2, border: '1px dashed grey', ml: 0 }} mt={3}  >
             <Typography variant="h16" gutterBottom sx={{ mt: 0 }} color="primary">
               Telecom
             </Typography>
-            <Grid container spacing={3}>
-            <Grid item md={12} xs={6}>
+            <Grid container spacing={2}>
+            <Grid item md={12} xs={12}>
                     <AutocompleteElement name="system" label="System" options={opcoesSystem} matchId
                     />
                 </Grid>
-                <Grid item md={12} xs={6}>
+                <Grid item md={12} xs={12}>
                     <TextFieldElement
                         id="t-value"
                         name="t-value"

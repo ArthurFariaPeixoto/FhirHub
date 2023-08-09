@@ -49,10 +49,12 @@ export default function ValueSet() {
                             spacing={2}
                             justifyContent="center"
                         >
-                            {/* <Button variant="contained"  href="form">Criar uma instância
-                            </Button> */}
-                            <Link variant="contained" href="/form">Criar uma instância</Link>
-
+                            {/* <Button variant="contained" type="button" href="/form">Criar uma instância
+                            </Button>
+                            <Link variant="contained" href="/form">Criar uma instância</Link> */}
+                            <Button variant="contained" type="button"><Link href="/form">Criar uma instância</Link>
+                            </Button>
+                            
                             <Button variant="outlined" href="https://www.hl7.org/fhir/r4/valueset.html">Documentação </Button>
                         </Stack>
                     </Container>

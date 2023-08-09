@@ -56,6 +56,7 @@ export default function Checkout() {
             ))}
           </Stepper>
           {activeStep === steps.length ? (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '50vh' }}>
             <React.Fragment>
               <Typography variant="h5" gutterBottom>
                 Finalizado.
@@ -63,7 +64,10 @@ export default function Checkout() {
               <Typography variant="subtitle1">
                ValueSet criado com sucesso.
               </Typography>
+              <Button variant="contained" type="button" href="/fhirHub/">Voltar para a Home
+                            </Button>
             </React.Fragment>
+            </div>
           ) : (
             <React.Fragment>
               

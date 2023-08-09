@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import { Grid, Typography, Stack, Box, DateTimeField, Switch, FormControlLabel, FormGroup, Checkbox, FormHelperText } from "@mui/material";
-import { AutocompleteElement, TextFieldElement, TextareaAutosizeElement, useFormContext, DatePickerElement } from "react-hook-form-mui";
+import { Grid, Typography, Switch, FormControlLabel, FormGroup, Checkbox, FormHelperText } from "@mui/material";
+import { AutocompleteElement, TextFieldElement, TextareaAutosizeElement, DatePickerElement } from "react-hook-form-mui";
 
 import Identifier from "../complex-type/indentifier";
 import Contact from "../complex-type/contact";
@@ -75,7 +75,7 @@ export default function Atributos() {
                     <AutocompleteElement name="status" label="Status" options={opcoesStatus} matchId required />
                 </Grid>
                 <Grid item xs={12}>
-                    <DatePickerElement label="Datetime Picker" name="datetime" inputProps={{ fullWidth: true }} />
+                    <DatePickerElement label="Date" name="datetime" inputProps={{ fullWidth: true }} />
                 </Grid>
                 <Grid item md={6} xs={12}>
                     <TextFieldElement id="version" name="version" label="Version" placeholder="1.0.0" helperText={showHelperText ? "Versão comercial do ValueSet" : null} fullWidth />
@@ -98,32 +98,29 @@ export default function Atributos() {
                     <TextFieldElement id="copyright" name="copyright" label="Copyright" placeholder="© 2023 Example Healthcare Organization. All rights reserved." helperText={showHelperText ? "Restrições de uso e/ou publicação" : null} fullWidth />
                 </Grid>
 
-                <Grid item md={6} xs={6}>
+                <Grid item md={12} xs={12}>
                     <FormGroup item mt={16}>
                         <FormControlLabel control={<Checkbox onChange={handleBoxChange2} />} label="Contact" />
                         {showHelperText && <FormHelperText>Dados de contato da editora</FormHelperText>}
                     </FormGroup>
                 </Grid>
 
-                <Grid item md={6} xs={6}>
+                <Grid item md={12} xs={12}>
                     <FormGroup item mt={16}>
                         <FormControlLabel control={<Checkbox onChange={handleBoxChange3} />} label="useContext" />
                         {showHelperText && <FormHelperText>O contexto que o conteúdo pretende apoiar</FormHelperText>}
                     </FormGroup>
                 </Grid>
-
-                {showContact && (
-                    <Grid item xs={6}>
-                        <Contact />
-                    </Grid>
-                )}
-
                 {showContext && (
-                    <Grid item xs={6}>
+                    <Grid item xs={12}>
                         <Context />
                     </Grid>
                 )}
-
+                {showContact && (
+                    <Grid item xs={12}>
+                        <Contact />
+                    </Grid>
+                )}
                 <Grid item md={12} xs={12}>
                     <TextareaAutosizeElement id="description" name="description" label="Description" placeholder="This is an example ValueSet for demonstration purposes." helperText={showHelperText ? "Descrição em linguagem natural do ValueSet" : null} fullWidth rows={5} resizeStyle={"none"} />
                 </Grid>

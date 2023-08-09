@@ -35,7 +35,7 @@ export default function Extensao() {
                     <TextFieldElement required id="identifier" name="identifier" label="Identifier" fullWidth />
                 </Grid>
                 <Grid item md={6} xs={12}>
-                    <DatePickerElement label="Datetime Picker" name="datetime" inputProps={{ fullWidth: true }} />
+                    <DatePickerElement label="Date" name="datetime" inputProps={{ fullWidth: true }} />
                 </Grid>
                 <Grid item md={6} xs={12}>
                     <TextFieldElement fullWidth label={"Total"} name={"total"} required type={"number"} />
