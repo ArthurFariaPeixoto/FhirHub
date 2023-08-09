@@ -94,6 +94,7 @@ export default function Atributos() {
             fullWidth
           />
         </Grid>
+
         <Grid item md={6} xs={12}>
           <AutocompleteElement name="status" label="Status" options={opcoesStatus} matchId required
           />

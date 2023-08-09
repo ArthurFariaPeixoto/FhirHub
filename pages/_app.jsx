@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 import { darkTheme, lightTheme } from "../config/theme";
 import createEmotionCache from "../config/createEmotionCache";
-import DateFnsUtils from "@date-io/date-fns";
+import AdapterDayjs  from "@mui/x-date-pickers";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Layout from "layout";
@@ -35,7 +35,7 @@ export default function MyApp(props) {
             </Head>
 
             <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
-                <LocalizationProvider dateAdapter={DateFnsUtils}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <QueryClientProvider client={queryClient}>
                         <CssBaseline />
                         <Layout>
