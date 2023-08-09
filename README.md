@@ -1,15 +1,9 @@
-# Next.js example
+# Ambiente de Design FHIR (ADF)
 
-## How to use
-
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+## Como usar
 
 <!-- #default-branch-switch -->
 
-```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
-```
 
 Install it and run:
 
@@ -17,11 +11,8 @@ Install it and run:
 yarn 
 yarn dev
 ```
+## Captura de tela do projeto
 
-or:
+![Screenshot_20230809_180643](https://github.com/ArthurFariaPeixoto/FhirHub/assets/102395421/47c84b75-4f39-4f4a-8534-b379a7634c08)
 
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/nextjs)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/nextjs)
+![Screenshot_20230809_180915](https://github.com/ArthurFariaPeixoto/FhirHub/assets/102395421/48a8f03f-5d6e-4be9-862f-dcd178b1cbd7)
